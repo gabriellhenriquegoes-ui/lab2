@@ -5,27 +5,39 @@ public class Bicho {
             "Camelo", "Cobra", "Coelho", "Cavalo", "Elefante", "Galo", "Gato", "Jacaré", "Leão", "Macaco",
             "Porco", "Pavão", "Peru", "touro", "Tigre", "Urso", "Veado", "Vaca"};
 
-    private int[] nums;
-    private int nume;
-    public Bicho(String num){
-        String[] partes = num.split(" ");
-        this.nums = new int[partes.length];
-        for(int i = 0; i < partes.length; i++){
-            nums[i] = Integer.parseInt(partes[i]);
+    public String pegarbicho(int numero){
+        if(numero >= 1 && numero <= 25){
+            return bichos[numero-1];
+        }else{return "Número invalido";}
+    }
+
+    public String[] aposta(){
+        Random rd = new Random();
+        Set<Integer> numerosorteados = new LinkedHashSet<>();
+
+        while(numerosorteados.size() < 5){
+            int numerosorteado = rd.nextInt(25)+1;
+                numerosorteados.add(numerosorteado);
         }
-    }
-    public String Num_bicho(nume){
-      this.num = nume;
-    }
-    public String getbichos(){
-        String[] nome_bichos = new String[nums.length];
-        for(int i = 0; i<nums.length; i++){
-            nome_bichos[i] = bichos[nums[i]-1];
+        String[] bichossorteados = new String[5];
+        int i = 0;
+        for(int numero:numerosorteados){
+            bichossorteados[i] = bichos[numero-1];
+            i++;
         }
-        Arrays.sort(nome_bichos);
-        return Arrays.toString(nome_bichos);
+        Arrays.sort(bichossorteados);
+        return bichossorteados;
     }
-    public String getbicho(){
-        return bichos[nume];
+
+    public String[] apostadousuario(String numeros){
+        String[] numerosapostados = numeros.split(" ");
+        String[] animaissorteados = new String[5];
+        int i = 0;
+        for(String nume:numerosapostados){
+            animaissorteados[i] = bichos[Integer.parseInt(nume)-1];
+            i++;
+        }
+        Arrays.sort(animaissorteados);
+        return animaissorteados;
     }
 }
