@@ -26,6 +26,6 @@ public class RegistroTempoOnline {
         }
     }
     public String toString(){
-        return  this.nomedisciplina + " " + this.tempoonline + "/" + this.tempoesperado
+        return  this.nomedisciplina + " " + this.tempoonline + "/" + this.tempoesperado;
     }
 }

@@ -23,18 +23,18 @@ public class Disciplina {
         this.notas[nota-1] = valorNota;
     }
     public boolean aprovado(){
-        for(double nota:this.notas){
-           this.n_final  += nota;
-           this.n_final /= 4;
-           if(this.n_final >= 7.0){
-               return true;
-           }
-           return false;
+        for(double nota:this.notas) {
+            this.n_final += nota;
         }
+        this.n_final /= 4;
+        if(this.n_final >= 7.0) {
+            return true;
+        }
+       return false;
     }
 
     @Override
     public String toString(){
-        this.nomeDisciplina + " " + this.horas + " " + this.n_final + " " + Arrays.toString(this.notas);
+        return this.nomeDisciplina + " " + this.horas + " " + this.n_final + " " + Arrays.toString(this.notas);
     }
 }
