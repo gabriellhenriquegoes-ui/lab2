@@ -1,5 +1,9 @@
 package lab2;
 
+/**
+ *
+ */
+
 public class RegistroTempoOnline {
     private int tempoonline;
     private String nomedisciplina;

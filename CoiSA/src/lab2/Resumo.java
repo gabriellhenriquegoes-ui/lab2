@@ -1,5 +1,7 @@
 package lab2;
 
+//Muito bem, dividiu o resumo do RegistroResumos para melhor o encapsulamento
+
 public class Resumo {
     private String tema;
     private String conteudo;

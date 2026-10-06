@@ -1,5 +1,7 @@
 package lab2;
 
+//programa muito bem feito, não acho que exista nada a melhorar
+
 import java.util.Arrays;
 
 public class Disciplina {
