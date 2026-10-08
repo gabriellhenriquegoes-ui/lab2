@@ -2,6 +2,9 @@ package lab2;
 
 //programa muito bem feito, não acho que exista nada a melhorar
 
+import java.util.Arrays;
+import java.util.Locale;
+
 public class RegistroResumos {
     private Resumo[] resumo;
     private int numeroDeResumos;
@@ -56,5 +59,22 @@ public class RegistroResumos {
             }
         }
         return conta;
+    }
+    public String[] busca(String chaveDeBusca){
+        String[] txtbusca = new String[conta()];
+        int contem = 0;
+        for(int i = 0; i < conta(); i++ ){
+            if(resumo[i].getConteudo().toLowerCase().contains(chaveDeBusca.toLowerCase())){
+                txtbusca[contem++] = resumo[i].getTema();
+            }
+        }
+        String[] txtfinal = new String[contem];
+        for(int i = 0; i < txtbusca.length; i ++){
+            if(txtbusca[i] != null){
+                txtfinal[i] = txtbusca[i];
+            }
+        }
+        Arrays.sort(txtfinal);
+        return txtfinal;
     }
 }
